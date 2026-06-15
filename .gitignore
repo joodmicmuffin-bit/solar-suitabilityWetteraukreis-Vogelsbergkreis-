@@ -1,0 +1,28 @@
+# ---- Big data: never commit ----
+data/raw/
+data/processed/*.tif
+*.tif
+*.tif.*
+*.ovr
+*.aux.xml
+
+# ---- ArcGIS junk ----
+arcgis/*.gdb/
+arcgis/.backups/
+arcgis/GpMessages/
+arcgis/ImportLog/
+arcgis/Index/
+*.lock
+*.atbx
+
+# ---- Geodatabases & big binaries anywhere ----
+*.gdb/
+
+# ---- Python ----
+.venv/
+__pycache__/
+*.pyc
+
+# ---- OS noise ----
+.DS_Store
+Thumbs.db
