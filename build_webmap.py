@@ -134,7 +134,7 @@ legend = """
 <span style="background:#e8f4e8;width:12px;height:12px;display:inline-block"></span> Very Low (&lt;2.5)<br>
 <hr style="margin:5px 0">
 <span style="background:#7e57c2;width:12px;height:12px;display:inline-block"></span> Protected area<br>
-<span style="background:#2e7d32;width:12px;height:12px;display:inline-block"></span> Forest<br>
+<span style="background:#f1c40f;width:12px;height:12px;display:inline-block"></span> Forest<br>
 </div>
 """
 m.get_root().html.add_child(folium.Element(legend))
