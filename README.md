@@ -1,5 +1,8 @@
 # Solar Park Suitability Analysis , Wetteraukreis & Vogelsbergkreis (Hesse)
 
+**[View the interactive map](https://joodmicmuffin-bit.github.io/solar-suitabilityWetteraukreis-Vogelsbergkreis-/)**
+
+
 A multi-criteria GIS analysis to find the best sites for ground-mounted solar parks (GMPV) across two contrasting districts in Hesse, Germany. One district is flat (Wetteraukreis), the other is hilly (Vogelsbergkreis), and that contrast is the point: it lets the model show where utility-scale solar actually makes sense, and why.
 
 ![Final suitability map](images/04_final_suitability.png)
