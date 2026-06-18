@@ -52,6 +52,8 @@ p = load(GPKG, "parcels_final")
 c = p.geometry.union_all().centroid
 m = folium.Map(location=[c.y, c.x], zoom_start=10, tiles="CartoDB positron")
 
+# bundle all parcels into ONE layer so they don't flood the layer control
+parcels_fg = folium.FeatureGroup(name="Suitability parcels")
 for _, r in p.iterrows():
     eeg = "Yes" if r.get("in_eeg_corridor", 0) in (1, True) else "No"
     popup_html = f"""
@@ -68,7 +70,8 @@ for _, r in p.iterrows():
             "fillColor": col, "color": "#333", "weight": 1, "fillOpacity": 0.85},
         tooltip=f"Rank {int(r['rank'])} | Score {r['TOTAL']:.2f}",
         popup=folium.Popup(popup_html, max_width=260),
-    ).add_to(m)
+    ).add_to(parcels_fg)
+parcels_fg.add_to(m)
 
 # --- study area outline ---
 try:
@@ -98,8 +101,8 @@ try:
     fo = load(GDB, "forest_large", simplify=True)
     folium.GeoJson(
         fo, name="Forests (>=3ha)", show=False,
-        style_function=lambda x: {"fillColor": "#2e7d32", "color": "#1b5e20",
-                                  "weight": 1, "fillOpacity": 0.4},
+        style_function=lambda x: {"fillColor": "#f1c40f", "color": "#d4ac0d",
+                                  "weight": 1, "fillOpacity": 0.5},
         tooltip="Forest - excluded",
     ).add_to(m)
 except Exception as e:
